@@ -4,7 +4,7 @@
 <div class="container">
     
     <div class="row">
-        <div class="col-lg-12 margin-tb">
+        <div class="col-lg-12">
             <div class="pull-left">
                 <h2>Create new Role</h2>
             </div>
@@ -40,8 +40,8 @@
                 <div class="form-group">
                     <strong>Permission: </strong>
                     <br>
-                    @foreach ($permissons as $permission)
-                        <label>{{ Form::checkbox('permission[]', $permission->id), false, array('class' => 'name') }} {{ $permission->name }} </label>
+                    @foreach ($permissions as $permission)
+                        <label>{{ Form::checkbox('permission[]', $permission->id), false, array('class' => 'name') }} {{ $permission->name }} </label><br>
                     @endforeach
                     <br/>
                 </div>
