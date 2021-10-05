@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Models\User;
 use Spatie\Permission\Models\Role;
 use Hash;
+use Illuminate\Support\Arr; //add this
 
 class UserController extends Controller
 {
@@ -45,4 +46,5 @@ class UserController extends Controller
         return redirect()->route('users.index')->with('success', 'User created Successfully!');
 
     }
+
 }
