@@ -57,3 +57,33 @@
 
 </div>
 @endsection
+
+{{-- If Using Normal HTML Form --}}
+{{-- 
+<form action="{{ route('users.store') }}" method="POST">
+    <div class="container">
+      <h1>Create a New User</h1>
+      <p>Please fill in this form to create a new User.</p>
+      <hr>
+  
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" id="email">
+  
+      <label for="password"><b>Password</b></label>
+      <input type="password" placeholder="Password" name="password" id="password">
+  
+      <label for="confirm-password"><b>Confirm Password</b></label>
+      <input type="password" placeholder="Confirm password" name="confirm-password" id="confirm-password">
+
+      <label for="confirm-password"><b>Roles</b></label>
+      <select class="form-control" name="roles[]" id="roles" multiple="multiple">
+        @foreach($roles as $role)
+          <option value="{{$role->id}}">{{$role->name}}</option>
+        @endforeach
+      </select>
+  
+      <button type="submit" class="btn btn-primary">Create New User</button>
+    </div>
+
+  </form> 
+  --}}
