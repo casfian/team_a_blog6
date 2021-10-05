@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class RoleController extends Controller
 {
@@ -11,9 +13,10 @@ class RoleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $roles = Role::orderby('id', 'DESC')->paginate(8);
+        return view('roles.index', compact('roles'))->with('i', ($request->input('page', 1) - 1) * 8);
     }
 
     /**
