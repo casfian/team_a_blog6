@@ -30,7 +30,13 @@
                         <td>{{ ++$i }}</td>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
-                        <td> -- User Roles -- </td>
+                        <td> 
+                            @if (!empty($user->getRoleNames()))
+                               @foreach ($user->getRoleNames() as $role)
+                                   <label class="badge badge-success">{{ $role }}</label>
+                               @endforeach 
+                            @endif
+                        </td>
                         <td> Show | Edit | Delete </td>
                     </tr>  
                 @endforeach
